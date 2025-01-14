@@ -34,22 +34,5 @@ namespace HomeEnergyUsageApi.Controllers
             homes.Add(home);
             return home;
         }
-
-        //start
-        [HttpPut("{ownerLastName}")]
-        public Home UpdateHome([FromBody] Home newHome, [FromRoute] string ownerLastName)
-        {
-            for (int i = 0; i < homes.Count; i++)
-            {
-                if (homes[i].ownerLastName == ownerLastName)
-                {
-                    homes[i] = newHome;
-                    return newHome;
-                }
-            }
-            return notFound;
-        }
-        //end
     }
-
 }
