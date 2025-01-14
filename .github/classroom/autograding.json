@@ -3,7 +3,7 @@
     {
       "name": "xunit tests",
       "setup": "",
-      "run": "DOTNET_CLI_HOME=/home/runner dotnet test ./HomeEnergyUsageApi.Tests",
+      "run": "DOTNET_CLI_HOME=/home/runner dotnet test ./HomeEnergyApi.Tests",
       "input": "",
       "output": "",
       "comparison": "included",
