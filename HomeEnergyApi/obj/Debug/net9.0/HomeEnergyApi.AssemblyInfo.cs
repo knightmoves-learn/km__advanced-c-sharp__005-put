@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HomeEnergyApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c8e12d8a97c954e0278d356e824fe838fca0864b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d4c83696e735d33a9968fdb2136c2ebb0305492e")]
 [assembly: System.Reflection.AssemblyProductAttribute("HomeEnergyApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HomeEnergyApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
