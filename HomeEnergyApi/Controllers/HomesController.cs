@@ -1,3 +1,4 @@
+using System.Reflection.Metadata.Ecma335;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HomeEnergyUsageApi.Controllers
@@ -39,13 +40,13 @@ namespace HomeEnergyUsageApi.Controllers
 
         public Home Update([FromBody] Home home, [FromRoute] string ownerLastName)
         {
-    
-            
-            if (home.ownerLastName == ownerLastName)
+            for(int i = 0; i < homes.Count; i++)
             {
-                return home;
+                if (home.ownerLastName == ownerLastName)
+                {
+                    return home;
+                }
             }
-            
             return notFound;
         } 
     }
