@@ -6,7 +6,7 @@ namespace HomeEnergyUsageApi.Controllers
     [Route("[controller]")]
     public class HomesController : ControllerBase
     {
-        private List<Home> homesList = new List<Home>();
+        private static List<Home> homesList = new List<Home>();
 
         [HttpGet]
         public IEnumerable<Home> Get()
