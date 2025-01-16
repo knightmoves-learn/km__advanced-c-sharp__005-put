@@ -40,7 +40,7 @@ namespace HomeEnergyUsageApi.Controllers
         {
             for (int i = 0; i < homesList.Count; i++)
             {
-                if(homesList[i].ownerLastName == ownerLastName)
+                if(homesList[i].ownerLastName.Equals(ownerLastName))
                 {
                     return homesList[i];
                 }
