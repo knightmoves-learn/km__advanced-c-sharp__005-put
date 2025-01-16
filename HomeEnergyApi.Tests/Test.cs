@@ -31,7 +31,7 @@ public class Test
 
     [Theory, TestPriority(2)]
     [InlineData("/Homes")]
-    public async Task HomeEnergyApiReturnsSuccessfulHTTPResponseOnPOST(string url)
+    public async Task HomeEnergyApiReturnsSuccessfulHTTPResponseOnAddingHomeThroughPOST(string url)
     {
         var client = _factory.CreateClient();
 
@@ -44,7 +44,7 @@ public class Test
         Assert.True(response.IsSuccessStatusCode, $"HomeEnergyApi did not return successful HTTP Response Code on POST request at {url}; instead received {(int)response.StatusCode}: {response.StatusCode}");
 
         string responseContent = await response.Content.ReadAsStringAsync();
-        Assert.True(responseContent == testHome, $"EmployeeApi did not return the employee being added as a response from the POST request at {url}; \n Expected : {testHome} \n Received : {responseContent} \n");
+        Assert.True(responseContent == testHome, $"HomeEnergyApi did not return the Home being added as a response from the POST request at {url}; \n Expected : {testHome} \n Received : {responseContent} \n");
     }
 
     [Theory, TestPriority(3)]
@@ -59,7 +59,7 @@ public class Test
 
         string responseContent = await response.Content.ReadAsStringAsync();
         string expectedContent = $"[{testHome}]";
-        Assert.True(responseContent == expectedContent, $"HomeEnergyApi did not return the correct Employee on GET request after making POST at {url}; \n Expected : {expectedContent} \n Received : {responseContent} \n");
+        Assert.True(responseContent == expectedContent, $"HomeEnergyApi did not return the correct Home on GET request after making POST at {url}; \n Expected : {expectedContent} \n Received : {responseContent} \n");
     }
 
     [Theory, TestPriority(4)]
@@ -92,7 +92,7 @@ public class Test
 
         string responseContent = await response.Content.ReadAsStringAsync();
         string expectedContent = $"[{putTestHome}]";
-        Assert.True(responseContent == expectedContent, $"HomeEnergyApi did not return the correct Employee on GET request after making PUT at {url}; \n Expected : {expectedContent} \n Received : {responseContent} \n");
+        Assert.True(responseContent == expectedContent, $"HomeEnergyApi did not return the correct Home on GET request after making PUT at {url}; \n Expected : {expectedContent} \n Received : {responseContent} \n");
     }
 
     [Theory, TestPriority(6)]
