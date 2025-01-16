@@ -33,5 +33,19 @@ namespace HomeEnergyUsageApi.Controllers
             homesList.Add(home);
             return home;
         }
+
+        [HttpPut("{ownerLastName}")]
+
+        public Home Update(string ownerLastName)
+        {
+            for (int i = 0; i < homesList.Count; i++)
+            {
+                if(homesList[i].ownerLastName == ownerLastName)
+                {
+                    return homesList[i];
+                }
+            }
+            return null;
+        }
     }
 }
