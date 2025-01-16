@@ -97,7 +97,7 @@ public class Test
 
     [Theory, TestPriority(6)]
     [InlineData("/Homes")]
-    public async Task HomeEnergyApiReturnsNotFoundHomeIfTryingToPUTHomeThatDoesntExist(string url)
+    public async Task HomeEnergyApiReturnsNoContetHTTPResponseIfTryingToPUTHomeThatDoesntExist(string url)
     {
         var client = _factory.CreateClient();
 
@@ -107,9 +107,6 @@ public class Test
                                                 "application/json");
 
         var response = await client.SendAsync(sendRequest);
-        Assert.True(response.IsSuccessStatusCode, $"HomeEnergyApi did not return successful HTTP Response Code on PUT request at {url}; instead received {(int)response.StatusCode}: {response.StatusCode}");
-
-        string responseContent = await response.Content.ReadAsStringAsync();
-        Assert.True(responseContent == expectedNotFound, $"HomeEnergyApi did not return the \"Not Found\" home as a response from the PUT request where the home did not exist at {url}; \n Expected : {expectedNotFound} \n Received : {responseContent} \n");
+        Assert.True((int)response.StatusCode == 204, $"HomeEnergyApi did not return HTTP Response \"204: NoContent\" on PUT request at {url}; instead received {(int)response.StatusCode}: {response.StatusCode}");
     }
 }
