@@ -38,7 +38,7 @@ namespace HomeEnergyUsageApi.Controllers
 
         public Home Update(string ownerLastName)
         {
-            for (int i = 1; i < (homesList.Count + 1); i++)
+            for (int i = 0; i < homesList.Count; i++)
             {
                 if(homesList[i].ownerLastName == ownerLastName)
                 {
