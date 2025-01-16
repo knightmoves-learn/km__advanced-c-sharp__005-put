@@ -97,7 +97,7 @@ public class Test
 
     [Theory, TestPriority(6)]
     [InlineData("/Homes")]
-    public async Task HomeEnergyApiReturnsNoContetHTTPResponseIfTryingToPUTHomeThatDoesntExist(string url)
+    public async Task HomeEnergyApiReturnsNoContentHTTPResponseIfTryingToPUTHomeThatDoesntExist(string url)
     {
         var client = _factory.CreateClient();
 
