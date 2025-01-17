@@ -42,6 +42,7 @@ namespace HomeEnergyUsageApi.Controllers
             {
                 if(homesList[i].ownerLastName == ownerLastName)
                 {
+                    homesList[i] = home;
                     return home;
                 }
             }
