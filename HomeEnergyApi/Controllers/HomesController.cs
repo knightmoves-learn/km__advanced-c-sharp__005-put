@@ -36,13 +36,13 @@ namespace HomeEnergyUsageApi.Controllers
 
         [HttpPut("{ownerLastName}")]
 
-        public Home Update(string ownerLastName)
+        public Home Update([FromBody] Home home, [FromRoute] string ownerLastName)
         {
             for (int i = 0; i < homesList.Count; i++)
             {
                 if(homesList[i].ownerLastName == ownerLastName)
                 {
-                    return homesList[i];
+                    return home;
                 }
             }
             return null;
